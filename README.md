@@ -95,7 +95,7 @@ Method 2:
 ```handlebars
 <label>
   <span>Choose a thing</span>
-  {{#sa-select id='my_id'}}
+  {{#sa-select}}
     {{!-- Option components here...--}}
   {{/sa-select}}
 </label>
