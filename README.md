@@ -1,12 +1,12 @@
 Selaction.js
-=========
+======
 
-A ```<select>``` component for **Ember.js** that allows actions or link-to transitions to be attached to each ```<option>```
+A `<select>` component for **Ember.js** that allows actions or link-to transitions to be attached to each `<option>`
 
 Installation & Prerequisites
 ------
 
-Simply copy and paste ```selaction.js``` into the components directory of your ember app.
+Simply copy and paste `selaction.js` into the components directory of your ember app.
 
 **Prerequsites:**
 - Ember.js
@@ -31,7 +31,7 @@ Selaction current supports the following use cases when an option is chosen:
 
 **Action on route or controller**
 
-Selaction allows you to attach an action to each ```<option>```.
+Selaction allows you to attach an action to each `<option>`.
 
 ```handlebars
 {{#sa-option action='copy'}}Copy{{/sa-option}}
@@ -65,7 +65,7 @@ App.YourView = Em.View.extend({
 
 **Transition to Another Route**
 
-Selaction also allows you to attach a route transition to an Selaction allows you to attach an action to each ```<option>``` (like a ```{{#link-to}}``` helper would).
+Selaction also allows you to attach a route transition to an Selaction allows you to attach an action to each `<option>` (like a `{{#link-to}}` helper would).
 
 ```handlebars
 {{#sa-option link-to='about'}}About Page{{/sa-option}}
@@ -79,7 +79,7 @@ App.Router.map(function() {
 
 **Accessibility**
 
-It's recommended that you use a label with your selaction ```select``` component. However, everyone seems to have forms set up in different ways. Thus, selaction doesn't come built with a label component. Instead, you can use one of the following methods to easily meet accessibility requirements.
+It's recommended that you use a label with your selaction `select` component. However, everyone seems to have forms set up in different ways. Thus, selaction doesn't come built with a label component. Instead, you can use one of the following methods to easily meet accessibility requirements.
 
 Method 1:
 
@@ -101,16 +101,16 @@ Method 2:
 </label>
 ```
 
+Of course, you're welcome to use the labels however you please. The above are just recommendations.
 
 Optional Customization
 ------
 
 Selaction works out of-the-box, but you can overwrite options easily in your templates. If you need more advanced customizations you can edit the Selaction source.
 
-
 **Class Prefixing**
 
-Use ```prefix``` to set the class prefix used for css targeting of each element in this instance of the Selaction component
+Use `prefix` to set the class prefix used for css targeting of each element in this instance of the Selaction component
 
 ```handlebars
 {{#sa-select prefix='eg'}}
@@ -120,7 +120,7 @@ Use ```prefix``` to set the class prefix used for css targeting of each element 
 
 **Element ID**
 
-Use ```id``` to set the id for the select element
+Use `id` to set the id for the select element
 
 ```handlebars
 {{#sa-select prefix='eg'}}
@@ -132,3 +132,8 @@ Contributing & Bugs
 ------
 
 Issue a PR or give me a holla.
+
+Todos and Known Issues
+------
+- Add <optgroup> support
+- Migrate to brunch or similar for package control
