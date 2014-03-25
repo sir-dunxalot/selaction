@@ -1,7 +1,7 @@
 Selaction.js
 ======
 
-A `<select>` component for **Ember.js** that allows actions or link-to transitions to be attached to each `<option>`
+A `<select>` component for **Ember.js** that allows actions or link-to transitions to be attached to each `<option>`.
 
 Installation & Prerequisites
 ------
@@ -101,7 +101,7 @@ Method 2:
 </label>
 ```
 
-Of course, you're welcome to use the labels however you please. The above are just recommendations.
+Of course, you're welcome to use labels however you please and usage will not affect the functionality of Selaction. The above are just recommendations.
 
 Optional Customization
 ------
@@ -110,7 +110,7 @@ Selaction works out of-the-box, but you can overwrite options easily in your tem
 
 **Class Prefixing**
 
-Use `prefix` to set the class prefix used for css targeting of each element in this instance of the Selaction component
+Use `prefix` to set the prefix for Selaciton's default element classes in this instance of the Selaction component.
 
 ```handlebars
 {{#sa-select prefix='eg'}}
@@ -118,12 +118,18 @@ Use `prefix` to set the class prefix used for css targeting of each element in t
 {{/sa-select}}
 ```
 
-**Element ID**
+**Element ID and Class**
 
-Use `id` to set the id for the select element
+Use `id` or 'class' to set the respective attribute for this instance of the `select` element.
 
 ```handlebars
-{{#sa-select prefix='eg'}}
+{{#sa-select id='quick_tasks'}}
+  {{!-- Option components here...--}}
+{{/sa-select}}
+```
+
+```handlebars
+{{#sa-select class='quick_tasks'}}
   {{!-- Option components here...--}}
 {{/sa-select}}
 ```
@@ -135,5 +141,5 @@ Issue a PR or give me a holla.
 
 Todos and Known Issues
 ------
-- Add '<optgroup>' support
+- Add `<optgroup>` support
 - Migrate to brunch or similar for package control
