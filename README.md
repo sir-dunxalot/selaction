@@ -1,7 +1,7 @@
-Selaction
+Selaction.js
 =========
 
-A ```<select>``` component for Ember.js that allows actions and link-to transitions to be attached to ```<option>```s
+A ```<select>``` component for **Ember.js** that allows actions or link-to transitions to be attached to each ```<option>```
 
 Installation
 ------
@@ -91,6 +91,7 @@ Use ```prefix``` to set the class prefix used for css targeting of each element 
 ```
 
 **Element ID**
+
 Use ```id``` to set the id for the select element
 
 ```handlebars
