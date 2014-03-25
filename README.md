@@ -81,6 +81,8 @@ App.Router.map(function() {
 
 It's recommended that you use a label with your selaction ```select``` component. However, everyone seems to have forms set up in different ways. Thus, selaction doesn't come built with a label component. Instead, you can use one of the following methods to easily meet accessibility requirements.
 
+Method 1:
+
 ```handlebars
 <label for="my_id">Choose a thing</label>
 {{#sa-select id='my_id'}}
@@ -88,8 +90,10 @@ It's recommended that you use a label with your selaction ```select``` component
 {{/sa-select}}
 ```
 
+Method 2:
+
 ```handlebars
-<label for="my_id">
+<label>
   <span>Choose a thing</span>
   {{#sa-select id='my_id'}}
     {{!-- Option components here...--}}
