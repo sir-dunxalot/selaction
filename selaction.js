@@ -28,8 +28,9 @@ Selaction.SelectWrapperComponent = Em.Component.extend(
 
   classNames: ['ember-select'],
   classNameBindings: ['selectClass'],
-  tagName: 'select',
   prefix: 'sa', // Overwrite on component in template
+  role: 'menu',
+  tagName: 'select',
 
   change: function(event) {
     var selected = event.target.selectedOptions[0];
