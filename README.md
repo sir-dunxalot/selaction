@@ -11,15 +11,20 @@ Simply copy and paste selaction.js into the components directory of your ember a
 Usage
 ------
 
-**Template**
+**Basic Usage**
 
 ```handlebars
 {{#sa-select}}
   {{#sa-placeholder}}Choose...{{/sa-placeholder}}
-  {{#sa-option action='copy' target='view'}}Copy{{/sa-option}}
-  {{#sa-option link-to='campaign.content'}}Compare{{/sa-option}}
+  {{#sa-option action='copy' target='view'}}Copy Text{{/sa-option}}
+  {{#sa-option link-to='about'}}About Page{{/sa-option}}
 {{/sa-select}}
 ```
+
+Selaction current supports the following use cases when an option is chosen:
+- Triggering an action on the route or controller
+- Triggering an action on the view
+- Transitioning to another route
 
 **Action on route or controller**
 
@@ -34,8 +39,8 @@ App.YourController = Em.ObjectController.extend({
   actions: {
     copy: function() {
       // Action logic here
-    }
-  }
+    },
+  },
 });
 ```
 
@@ -52,8 +57,8 @@ App.YourView = Em.View.extend({
   actions: {
     copy: function() {
       // Action logic here
-    }
-  }
+    },
+  },
 });
 ```
 
