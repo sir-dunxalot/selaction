@@ -135,5 +135,5 @@ Issue a PR or give me a holla.
 
 Todos and Known Issues
 ------
-- Add <optgroup> support
+- Add '<optgroup>' support
 - Migrate to brunch or similar for package control
