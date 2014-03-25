@@ -3,10 +3,13 @@ Selaction.js
 
 A ```<select>``` component for **Ember.js** that allows actions or link-to transitions to be attached to each ```<option>```
 
-Installation
+Installation & Prerequisites
 ------
 
-Simply copy and paste ```selaction.js``` into the components directory of your ember app
+Simply copy and paste ```selaction.js``` into the components directory of your ember app.
+
+**Prerequsites:**
+- Ember.js
 
 Usage
 ------
@@ -73,6 +76,27 @@ App.Router.map(function() {
   this.route('about', { path: '/about' });
 });
 ```
+
+**Accessibility**
+
+It's recommended that you use a label with your selaction ```select``` component. However, everyone seems to have forms set up in different ways. Thus, selaction doesn't come built with a label component. Instead, you can use one of the following methods to easily meet accessibility requirements.
+
+```handlebars
+<label for="my_id">Choose a thing</label>
+{{#sa-select id='my_id'}}
+  {{!-- Option components here...--}}
+{{/sa-select}}
+```
+
+```handlebars
+<label for="my_id">
+  <span>Choose a thing</span>
+  {{#sa-select id='my_id'}}
+    {{!-- Option components here...--}}
+  {{/sa-select}}
+</label>
+```
+
 
 Optional Customization
 ------

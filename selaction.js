@@ -4,20 +4,19 @@ Selaction = Em.Namespace.create({
   VERSION: '0.1.0',
 });
 
-/* Generic Classes */
+/* Generic Methods */
 
 Selaction.Core = Em.Mixin.create({
 
   selectComponent: function() {
-    var className = Selaction.SelectWrapperComponent
+    var className = Selaction.SelectWrapperComponent;
     return this.nearestOfType(className);
   }.property(),
 
-  _class: function(modifier) {
+  _formatClass  : function(modifier) {
     var prefix = this.get('selectComponent.prefix') || this.get('prefix');
     return prefix + '-' + modifier;
   },
-
 });
 
 /* Main component on which options are set in the template */
@@ -49,7 +48,7 @@ Selaction.SelectWrapperComponent = Em.Component.extend(
   },
 
   selectClass: function() {
-    return this._class('select');
+    return this._formatClass('select');
   }.property('selectComponent.prefix'),
 
   _action: function(action, target, view) {
@@ -73,7 +72,7 @@ Em.Handlebars.helper('sa-select', Selaction.SelectWrapperComponent);
 
 /* Individual option component - has an action (with optional target) or a link-to */
 
-Selaction.MenuOptionComponent = Em.Component.extend(
+Selaction.SelectOptionComponent = Em.Component.extend(
   Selaction.Core, {
 
   attributeBindings: [
@@ -88,23 +87,23 @@ Selaction.MenuOptionComponent = Em.Component.extend(
   role: 'menuitem',
 
   optionClass: function() {
-    return this._class('option');
+    return this._formatClass('option');
   }.property('selectComponent.prefix'),
 });
 
-Em.Handlebars.helper('sa-option', Selaction.MenuOptionComponent);
+Em.Handlebars.helper('sa-option', Selaction.SelectOptionComponent);
 
 /* Placeholder component (default option for select) */
 
-Selaction.MenuPlaceholderComponent = Selaction.MenuOptionComponent.extend({
+Selaction.SelectPlaceholderComponent = Selaction.SelectOptionComponent.extend({
   attributeBindings: ['disabled', 'selected',],
   classNameBindings: ['placeholderClass'],
   disabled: true,
   selected: true,
 
   placeholderClass: function() {
-    return this._class('placeholder');
+    return this._formatClass('placeholder');
   }.property('selectComponent.prefix'),
 });
 
-Em.Handlebars.helper('sa-placeholder', Selaction.MenuPlaceholderComponent);
+Em.Handlebars.helper('sa-placeholder', Selaction.SelectPlaceholderComponent);
