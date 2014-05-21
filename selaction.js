@@ -43,7 +43,7 @@ Selaction.SelectWrapperComponent = Em.Component.extend(
     } else if (linkTo) {
       this._linkTo(linkTo, view);
     } else {
-      Em.assert('You did not specify an action or link-to for the chosen menu-item component in your template');
+      Em.warn('You did not specify an action or link-to for the chosen menu-item component in your template');
     }
   },
 
@@ -53,7 +53,7 @@ Selaction.SelectWrapperComponent = Em.Component.extend(
 
   _action: function(action, target, view) {
 
-    if (target == 'view') {
+    if (target === 'view') {
       target = view;
     }
 
