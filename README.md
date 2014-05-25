@@ -145,3 +145,4 @@ Todos and Known Issues
 ------
 - Add `<optgroup>` support
 - Use package control
+- Send paramaters with actions
